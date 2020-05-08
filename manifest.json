@@ -1,0 +1,6 @@
+{
+  "short_name": "Blackjack",
+  "name": "Blackjack by Dror Tal",
+  "start_url": ".",
+  "display": "standalone"
+}
