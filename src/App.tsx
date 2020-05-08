@@ -122,7 +122,6 @@ class App extends Component<IProps, IState> {
         >
           {this.state.sum > 21 || this.state.over ? "Start Again" : "Finish"}
         </Button>
-        )}
         <div className="cards">
           <div className="width">
             <Header className="score">{"You:"}</Header>
