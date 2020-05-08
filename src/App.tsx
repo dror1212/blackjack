@@ -14,6 +14,7 @@ interface IState {
   over: boolean;
   sum: number;
   enemySum: number;
+  stop: boolean;
 }
 
 class App extends Component<IProps, IState> {
@@ -26,6 +27,7 @@ class App extends Component<IProps, IState> {
       over: false,
       sum: 0,
       enemySum: 0,
+      stop: false,
     };
   }
   render() {
@@ -40,7 +42,9 @@ class App extends Component<IProps, IState> {
           this.state.enemySum <= 21
             ? "You lost"
             : this.state.over
-            ? "You won"
+            ? this.state.sum === this.state.enemySum
+              ? "You tied"
+              : "You won"
             : "Your Turn"}
         </Header>{" "}
         <Button
@@ -58,7 +62,8 @@ class App extends Component<IProps, IState> {
               this.state.deck.cards.splice(rnd, 1);
 
               let enemyTemp = 0;
-              if (this.state.enemySum <= 16) {
+              let stop = this.state.stop;
+              if (this.state.enemySum <= 16 && this.state.sum + temp <= 21) {
                 rnd = Math.floor(Math.random() * this.state.deck.cards.length);
                 this.state.enemyCards.push(this.state.deck.cards[rnd]);
                 enemyTemp =
@@ -66,12 +71,15 @@ class App extends Component<IProps, IState> {
                     ? 10
                     : this.state.deck.cards[rnd].value;
                 this.state.deck.cards.splice(rnd, 1);
+              } else {
+                stop = true;
               }
 
               this.setState({
                 sum: this.state.sum + temp,
                 enemySum: this.state.enemySum + enemyTemp,
                 over: this.state.enemySum + enemyTemp > 21,
+                stop: stop,
               });
             }
           }}
@@ -89,13 +97,17 @@ class App extends Component<IProps, IState> {
                 over: false,
                 sum: 0,
                 enemySum: 0,
+                stop: false,
               });
             } else {
               let enemyTemp = 0;
               const temp = this.state.deck.cards;
               let rnd = Math.floor(Math.random() * temp.length);
 
-              while (this.state.enemySum + enemyTemp <= 16) {
+              while (
+                this.state.enemySum + enemyTemp < this.state.sum &&
+                !this.state.stop
+              ) {
                 this.state.enemyCards.push(temp[rnd]);
                 enemyTemp += temp[rnd].value > 10 ? 10 : temp[rnd].value;
                 temp.splice(rnd, 1);
