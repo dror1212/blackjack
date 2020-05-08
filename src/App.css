@@ -1,6 +1,6 @@
 .my-bj {
   align-items: center;
-  text-align: center;
+  text-align: center !important;
 }
 
 .cards-info {
@@ -20,10 +20,13 @@
   padding-top: 15px !important;
   color: white !important;
   font-size: 54px !important;
-  max-width: 50vw;
-  position: relative;
-  left: 42.5vw;
   font-weight: bolder;
+}
+
+.score {
+  padding-top: 15px !important;
+  color: white !important;
+  font-size: 30px !important;
 }
 
 .my-card {
@@ -32,4 +35,26 @@
   margin: 10px !important;
   border: unset !important;
   text-align: center !important;
+}
+
+.cards {
+  display: flex;
+  width: 100vw;
+  text-align: center;
+}
+
+.width {
+  width: 50vw;
+}
+
+.my-button {
+  background-color: black !important;
+  border: solid white !important;
+  color: white !important;
+  min-width: 100px !important;
+  font-weight: bold;
+}
+
+.score-number {
+  color: white !important;
 }
