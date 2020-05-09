@@ -4,10 +4,3 @@ export enum signs {
   diamond = "diamond",
   club = "club",
 }
-
-export enum colors {
-  spade = "black",
-  heart = "red",
-  diamond = "red",
-  club = "black",
-}
