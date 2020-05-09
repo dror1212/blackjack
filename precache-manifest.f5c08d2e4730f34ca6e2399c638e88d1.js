@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6ef9609097595a19dd142d1976880888",
+    "revision": "e28b8b53948be8f9690cd03ce6246475",
     "url": "/blackjack/index.html"
   },
   {
-    "revision": "daf529be15e4ee245f02",
+    "revision": "fb5c22989c7136fc7348",
     "url": "/blackjack/static/css/2.92aae801.chunk.css"
   },
   {
-    "revision": "e2fae64476cd57424ef9",
-    "url": "/blackjack/static/css/main.345e5324.chunk.css"
+    "revision": "ca65dc43138887c7e975",
+    "url": "/blackjack/static/css/main.cb15b73c.chunk.css"
   },
   {
-    "revision": "daf529be15e4ee245f02",
-    "url": "/blackjack/static/js/2.72d90c08.chunk.js"
+    "revision": "fb5c22989c7136fc7348",
+    "url": "/blackjack/static/js/2.c5325ae8.chunk.js"
   },
   {
     "revision": "4d47ffde3dc69784e8e23fd910817ef8",
-    "url": "/blackjack/static/js/2.72d90c08.chunk.js.LICENSE.txt"
+    "url": "/blackjack/static/js/2.c5325ae8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e2fae64476cd57424ef9",
-    "url": "/blackjack/static/js/main.46430d4b.chunk.js"
+    "revision": "ca65dc43138887c7e975",
+    "url": "/blackjack/static/js/main.5f7edb6a.chunk.js"
   },
   {
     "revision": "595eef2f7276a22ba78e",
