@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Button, Header, Card } from "semantic-ui-react";
+import { Button, Header, Image } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import "./App.css";
 import { Deck, CardModel } from "./Models";
-import { show } from "./Consts";
 
 interface IProps {}
 
@@ -105,8 +104,10 @@ class App extends Component<IProps, IState> {
               let rnd = Math.floor(Math.random() * temp.length);
 
               while (
-                this.state.enemySum + enemyTemp < this.state.sum &&
-                !this.state.stop
+                this.state.enemySum + enemyTemp < this.state.sum ||
+                (this.state.enemySum + enemyTemp <= this.state.sum &&
+                  this.state.enemySum + enemyTemp <= 11 &&
+                  !this.state.stop)
               ) {
                 this.state.enemyCards.push(temp[rnd]);
                 enemyTemp += temp[rnd].value > 10 ? 10 : temp[rnd].value;
@@ -129,10 +130,13 @@ class App extends Component<IProps, IState> {
             <div className="cards-info">
               {this.state.myCards.map((card: CardModel) => {
                 return (
-                  <Card className="my-card">
-                    <Header>{card.sign}</Header>
-                    {card.value}
-                  </Card>
+                  <Image
+                    className="my-card"
+                    src={require("../src/images/" +
+                      card.value +
+                      card.sign +
+                      ".jpg")}
+                  ></Image>
                 );
               })}
             </div>
@@ -143,10 +147,13 @@ class App extends Component<IProps, IState> {
             <div className="cards-info">
               {this.state.enemyCards.map((card: CardModel) => {
                 return (
-                  <Card className="my-card">
-                    <Header>{card.sign}</Header>
-                    {show[card.value - 1]}
-                  </Card>
+                  <Image
+                    className="my-card"
+                    src={require("../src/images/" +
+                      card.value +
+                      card.sign +
+                      ".jpg")}
+                  ></Image>
                 );
               })}
             </div>

@@ -30,11 +30,7 @@
 }
 
 .my-card {
-  max-width: 160px !important;
-  min-height: 250px !important;
-  margin: 10px !important;
-  border: unset !important;
-  text-align: center !important;
+  margin: 7px !important;
 }
 
 .cards {
